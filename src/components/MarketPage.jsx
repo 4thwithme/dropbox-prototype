@@ -1,9 +1,10 @@
 import { useMemo, useState } from 'react'
 import { useNonClickable } from './NonClickable.jsx'
 import MarketThumb from './MarketThumb.jsx'
+import PreviewSurface from './PreviewSurface.jsx'
 import { categories, products, sorts, sortProducts } from '../data/market.js'
 import { encodeData } from '../lib/link.js'
-import { DropboxLogo, SearchIcon, ActivityIcon, StarFill, DownloadIcon, CloseIcon, ChevronDown } from '../icons/Icons.jsx'
+import { DropboxLogo, SearchIcon, ActivityIcon, StarFill, DownloadIcon, CloseIcon, ChevronDown, SparkleIcon } from '../icons/Icons.jsx'
 
 const fmtDl = (n) => (n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : `${n}`)
 
@@ -29,7 +30,7 @@ function QuickView({ p, onClose }) {
     <div className="modal-overlay" onClick={onClose}>
       <div className="qv" onClick={(e) => e.stopPropagation()} role="dialog" aria-label={p.title}>
         <button className="se-close" onClick={onClose} aria-label="Close"><CloseIcon size={18} /></button>
-        <div className="qv-thumb"><MarketThumb p={p} big /></div>
+        <div className="qv-thumb"><PreviewSurface item={p} /></div>
         <div className="qv-body">
           <span className="qv-ext">{p.ext.toUpperCase()} · {p.category}</span>
           <h3 className="qv-title">{p.title}</h3>
@@ -68,16 +69,21 @@ export default function MarketPage() {
       <header className="mk-top">
         <a className="mk-brand" href="#/"><DropboxLogo size={26} /><span>Dropbox</span></a>
         <div className="mk-search">
-          <SearchIcon size={20} />
+          <span className="mk-search-ic"><SearchIcon size={20} /></span>
           <input
             className="mk-search-input"
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="Search files, templates, creators…"
+            placeholder="Ask AI to find files, templates, creators…"
           />
+          <button className="mk-ai-btn" onClick={nc}>
+            <SparkleIcon size={16} /> Ask AI
+          </button>
         </div>
-        <a className="mk-sell" href="#/shop">Sell your files</a>
-        <button className="mk-bell" onClick={nc} aria-label="Notifications"><ActivityIcon size={22} /></button>
+        <div className="mk-actions">
+          <a className="mk-sell" href="#/shop">Sell your files</a>
+          <button className="mk-bell" onClick={nc} aria-label="Notifications"><ActivityIcon size={22} /></button>
+        </div>
       </header>
 
       <div className="mk-body">

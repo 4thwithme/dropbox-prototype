@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import Sidebar from './Sidebar.jsx'
 import TopBar from './TopBar.jsx'
 import MobileDrawer from './MobileDrawer.jsx'
+import FilePreviewModal from './FilePreviewModal.jsx'
 import { Thumb, Mini } from './fileVisuals.jsx'
 import { useToast } from './Toast.jsx'
 import { getShopItems } from '../lib/shop.js'
@@ -15,6 +16,7 @@ const fmtDl = (n) => (n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k
 export default function ShopPage() {
   const showToast = useToast()
   const [items, setItems] = useState([])
+  const [preview, setPreview] = useState(null)
 
   useEffect(() => {
     const load = () => {
@@ -85,7 +87,7 @@ export default function ShopPage() {
           ) : (
             <div className="file-grid">
               {items.map((p) => (
-                <div key={p.id} className="file-card shop-card">
+                <button key={p.id} className="file-card shop-card" onClick={() => setPreview(p)}>
                   <span className={`file-thumb${p.type === 'image' ? ' is-image' : ''}`}>
                     <Thumb f={p} />
                     <span className="shop-price">{p.price}</span>
@@ -102,12 +104,13 @@ export default function ShopPage() {
                       </span>
                     </span>
                   </span>
-                </div>
+                </button>
               ))}
             </div>
           )}
         </main>
       </div>
+      {preview && <FilePreviewModal item={preview} onClose={() => setPreview(null)} sub={preview.price} />}
     </div>
   )
 }

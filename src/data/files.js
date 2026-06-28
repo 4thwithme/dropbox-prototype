@@ -1,15 +1,14 @@
 // Mock data — no backend. Mirrors the reference screenshot.
 
 export const suggested = [
-  { id: 's1', type: 'folder', glyph: 'person', name: 'Andrii Popenko', meta: 'Folder · Cellon' },
   { id: 's2', type: 'design', name: 'Mobile_UI_Kit.fig', meta: 'Figma · 12.4 MB' },
   { id: 's3', type: 'book', name: 'Atomic_Habits.epub', meta: 'eBook · 1.1 MB' },
+  { id: 's4', type: 'audio', name: 'Summer_Vibes.mp3', meta: 'Audio · 3.8 MB' },
 ]
 
 // type: 'folder' | 'image' | 'pdf' | 'sheet' | 'doc'
 //     | 'model3d' | 'audio' | 'book' | 'archive' | 'design'
 export const files = [
-  { id: 'f1', type: 'folder', glyph: 'person', name: 'Andrii Popenko', meta: 'Member folder · 0 items' },
   { id: 'f2', type: 'image', src: `${import.meta.env.BASE_URL}cat.png`, name: 'Screenshot 2025-12-29 at 01.33.51', meta: 'PNG · 849.23 KB' },
   // 3D / audio / book
   { id: 'f3', type: 'model3d', name: 'Dragon_Bust.stl', meta: '3D model · 4.2 MB' },

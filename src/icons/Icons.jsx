@@ -202,6 +202,12 @@ export const CardIcon = ({ size = 18 }) => (
     <path d="M3 9.5h18" />
   </svg>
 )
+export const SparkleIcon = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12 2.2l1.7 5.6 5.6 1.7-5.6 1.7L12 16.8l-1.7-5.6L4.7 9.5l5.6-1.7z" />
+    <path d="M18.5 14.2l.9 2.6 2.6.9-2.6.9-.9 2.6-.9-2.6-2.6-.9 2.6-.9z" opacity=".75" />
+  </svg>
+)
 export const StoreIcon = ({ size = 24 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" {...s} aria-hidden="true">
     <path d="M4 9l1-4h14l1 4" />

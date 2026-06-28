@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNonClickable } from './NonClickable.jsx'
 import ShareEarnModal from './ShareEarnModal.jsx'
+import FilePreviewModal from './FilePreviewModal.jsx'
 import { Thumb, Mini } from './fileVisuals.jsx'
 import { suggested, files, members } from '../data/files.js'
 import avatar from '../assets/avatar.js'
@@ -15,6 +16,7 @@ export default function Content() {
   const nc = useNonClickable()
   const [shareFile, setShareFile] = useState(null)
   const [shopFile, setShopFile] = useState(null)
+  const [previewFile, setPreviewFile] = useState(null)
   const [menu, setMenu] = useState(null) // { file, x, y }
 
   const openMenu = (f) => (e) => {
@@ -28,8 +30,9 @@ export default function Content() {
       <ContentHeader nc={nc} />
       <Suggested nc={nc} />
       <FilterRow nc={nc} />
-      <FileGrid nc={nc} onShare={setShareFile} onMenu={openMenu} />
+      <FileGrid nc={nc} onShare={setShareFile} onMenu={openMenu} onPreview={setPreviewFile} />
 
+      {previewFile && <FilePreviewModal item={previewFile} onClose={() => setPreviewFile(null)} />}
       {menu && (
         <CardMenu
           menu={menu}
@@ -146,7 +149,7 @@ function FilterRow({ nc }) {
   )
 }
 
-function FileGrid({ nc, onShare, onMenu }) {
+function FileGrid({ nc, onShare, onMenu, onPreview }) {
   const openShare = (f) => (e) => { e.preventDefault(); e.stopPropagation(); onShare(f) }
   return (
     <section className="file-section">
@@ -157,9 +160,8 @@ function FileGrid({ nc, onShare, onMenu }) {
 
       <div className="file-grid">
         {files.map((f) => (
-          <button key={f.id} className="file-card" onClick={nc}>
+          <button key={f.id} className="file-card" onClick={() => onPreview(f)}>
             <span className={`file-thumb${f.type === 'image' ? ' is-image' : ''}`}>
-              <span className="card-check" onClick={nc}><CheckSquare size={22} /></span>
               <button className="card-menu mobile-only" onClick={onMenu(f)} aria-label="More"><DotsIcon size={20} /></button>
               <span className="card-tools" onClick={nc}>
                 <span className="share-btn">Share</span>
@@ -173,9 +175,8 @@ function FileGrid({ nc, onShare, onMenu }) {
               {f.type !== 'folder' && (
                 <>
                   <span className="thumb-badge" onClick={nc}><PencilIcon size={12} /></span>
-                  <button className="earn-btn" onClick={openShare(f)} aria-label="Share & Earn">
-                    <span className="earn-icon">$</span>
-                    <span className="earn-label">Share &amp; Earn</span>
+                  <button className="earn-btn" onClick={openShare(f)}>
+                    Share &amp; Earn
                   </button>
                 </>
               )}

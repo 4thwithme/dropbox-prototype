@@ -2,13 +2,16 @@ import { createContext, useContext, useEffect, useRef, useState } from 'react'
 
 const Ctx = createContext(() => {})
 
-// Hook: returns a click handler that pops a "Non-clickable" tooltip at the cursor.
+// Tooltip shown when a non-functional (prototype-only) control is clicked.
+const DISABLED_LABEL = 'не для цілей фінального проєкту'
+
+// Hook: returns a click handler that pops the "disabled" tooltip at the cursor.
 export const useNonClickable = (label) => {
   const fire = useContext(Ctx)
   return (e) => {
     e.preventDefault()
     e.stopPropagation()
-    fire(e.clientX, e.clientY, label || 'Non-clickable')
+    fire(e.clientX, e.clientY, label || DISABLED_LABEL)
   }
 }
 
