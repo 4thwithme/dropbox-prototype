@@ -1,0 +1,129 @@
+/* =====================================================================
+   Dropbox-inspired design tokens
+   Source key:
+     [SITE]   confirmed text on brand.dropbox.com
+     [SAMPLE] pixel-sampled from your screenshot (macOS screenshot =
+              slight color-profile shift; treat as ±, not exact brand hex)
+     [CANON]  widely-published canonical brand value
+     [RECON]  reconstructed/derived — NOT official, sane defaults to ship with
+   NOTE: full official Core/Accent/Grey hex live as rendered swatches on
+   /color and need Chrome (extension was offline) to scrape exactly.
+   ===================================================================== */
+
+:root {
+  /* ---- Core ---------------------------------------------------- */
+  --db-blue:        #0061FF;   /* [CANON] logo glyph; rendered #2860F5 in your shot */
+  --db-graphite:    #1E1919;   /* [SITE] theme-color meta on every subpage */
+  --db-coconut:     #FFFFFF;   /* [SITE] named off-white surface */
+
+  /* ---- Accents (names = official; hex = [SAMPLE] unless noted) -- */
+  --db-navy:        #2B374E;
+  --db-gold:        #F4D464;
+  --db-zen:         #6ED0EB;   /* light blue */
+  --db-slate-teal:  #235361;
+  --db-rust:        #E86134;
+  --db-crimson:     #47091A;   /* deep maroon */
+  --db-lime:        #BCDB4A;
+  --db-tangerine:   #F0923C;
+  --db-plum:        #7E2954;
+  --db-azalea:      #BD3E7A;   /* magenta */
+  --db-blush:       #F4B3A8;   /* light pink */
+  /* not visible in screenshot — official accent names, fill from /color:
+     Pink, Sunset, Vivid Vargas, Canopy, Ocean, Cloud, Orchid */
+
+  /* ---- Grey ramp [RECON] -------------------------------------- */
+  /* official ramp is 20 steps 1000(dark)->50(light); below is derived */
+  --db-grey-1000:   #1E1919;
+  --db-grey-900:    #2B2828;
+  --db-grey-800:    #3D3A3A;
+  --db-grey-700:    #56524F;
+  --db-grey-600:    #6B6764;
+  --db-grey-500:    #8C8884;
+  --db-grey-400:    #ABA7A2;
+  --db-grey-300:    #C9C5C0;
+  --db-grey-200:    #E2DEDA;
+  --db-grey-100:    #F0EDE9;
+  --db-grey-50:     #F7F5F2;
+
+  /* ---- Semantic (product UI, white-dominant) ------------------ */
+  --db-bg:          var(--db-coconut);
+  --db-surface:     var(--db-grey-50);
+  --db-border:      var(--db-grey-200);
+  --db-text:        var(--db-graphite);
+  --db-text-muted:  var(--db-grey-600);
+  --db-accent:      var(--db-blue);
+  --db-accent-hov:  #0050D6;   /* [RECON] */
+
+  /* ---- Typography --------------------------------------------- */
+  /* [SITE] brand face = "DB Sharp Grotesk" (custom Sharp Type cut),
+     variable axes: width, weight, contrast. PAID/internal license. */
+  --db-font-brand:  "DB Sharp Grotesk", "Sharp Grotesk", sans-serif;
+  --db-font-ui:     "Inter", system-ui, -apple-system, sans-serif;   /* [RECON] free substitute */
+  --db-font-display:"Archivo", "Inter", sans-serif;                  /* [RECON] for the squashed display look */
+  --db-leading:     1.2;       /* [SITE] ~120% */
+  /* [SITE] set flush-left, ragged-right; never centered */
+
+  /* ---- Iconography [SITE] ------------------------------------- */
+  --db-icon-ui:     24px;      /* UI icons */
+  --db-icon-picto:  64px;      /* pictograms */
+  --db-icon-spot:   120px;     /* spot icons */
+  /* corners: mix of round + square, modeled on Sharp Grotesk */
+
+  /* ---- Motion [SITE] ------------------------------------------ */
+  --db-ease:        cubic-bezier(0.65, 0, 0.45, 1);
+  --db-dur-fast:    150ms;     /* [RECON] */
+  --db-dur-base:    250ms;     /* [RECON] */
+  /* principles: simplicity · deepen understanding · instant feedback · subtle playfulness */
+
+  /* ---- Layout primitives [SAMPLE: from real Dropbox UI] ------- */
+  --db-sidebar-w:   80px;      /* [SAMPLE] collapsed icon rail in screenshot */
+  --db-topbar-h:    72px;      /* [SAMPLE] */
+  --db-row-pad:     12px;
+  --db-radius:      8px;
+  --db-radius-sm:   6px;
+  --db-radius-lg:   12px;
+  --db-radius-pill: 9999px;
+  --db-content-max: 1640px;    /* [RECON] content gutter cap */
+  --db-gap:         12px;
+
+  /* ---- Folder art [SAMPLE from screenshot] -------------------- */
+  --db-folder:        #9ECCFA;   /* folder body blue */
+  --db-folder-glyph:  #2D7FF0;   /* person/building glyph */
+  --db-thumb-bg:      #F2F1EE;   /* grey square behind folder thumbnails */
+
+  /* ---- File-type accents [RECON: Dropbox-style] --------------- */
+  --db-file-pdf:     #F0463C;
+  --db-file-sheet:   #1E8E3E;
+  --db-file-doc:     #2D7FF0;
+  --db-file-image:   #8B5CF6;
+  --db-file-model3d: #F0923C;   /* 3D / STL */
+  --db-file-audio:   #BD3E7A;   /* audio */
+  --db-file-book:    #235361;   /* ebook */
+  --db-file-archive: #C99A2E;   /* zip / archive */
+  --db-file-design:  #A259FF;   /* Figma / design */
+  --db-file-video:   #5B6CFF;   /* video */
+  --db-file-page:    #FFFFFF;   /* page body */
+  --db-file-fold:    #EAE7E3;   /* folded corner */
+  --db-file-stroke:  #D7D3CE;   /* page outline */
+
+  /* ---- Surfaces & states -------------------------------------- */
+  --db-hover:       #F4F2EF;   /* [SAMPLE] neutral row/btn hover */
+  --db-hover-strong:#ECEAE6;   /* pressed / stronger hover */
+  --db-card:        #F7F6F4;   /* [SAMPLE] suggested-card fill */
+  --db-card-hover:  #F0EEEB;
+  --db-search-bg:   #F7F6F4;
+  --db-divider:     #E7E4E0;
+  --db-shadow-sm:   0 1px 2px rgba(0,0,0,.06), 0 1px 1px rgba(0,0,0,.04);
+  --db-shadow-pop:  0 6px 20px rgba(0,0,0,.16);
+
+  /* ---- Buttons ------------------------------------------------- */
+  --db-btn-dark:    #1E1919;   /* "New" black button */
+  --db-btn-dark-hov:#000000;
+
+  /* ---- Avatars ------------------------------------------------- */
+  --db-avatar-sm:   28px;
+  --db-avatar-lg:   34px;
+
+  /* ---- Z / misc ------------------------------------------------ */
+  --db-z-tooltip:   9999;
+}
