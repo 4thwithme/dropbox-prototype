@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start earning — Share &amp; Earn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 43 40" aria-hidden="true"><path fill="#0061FF" d="M12.5 0L0 8.1l8.7 7 12.8-7.9zM0 22.1l12.5 8.1 8.7-7.2-12.8-7.9zm21.3.9l8.7 7.2L43 22.1l-8.6-7zM43 8.1L30.5 0 21.8 7.2l12.8 7.9zM21.5 24.6l-8.7 7.2-3.7-2.4v2.7l12.4 7.4 12.4-7.4v-2.7l-3.7 2.4z"/></svg>
+      Dropbox
+    </a>
+    <nav class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#who">Who it's for</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#top" class="btn btn-primary btn-sm">Start earning</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+
+    <!-- PROGRESS -->
+    <div class="funnel-progress">
+      <span class="fp-step active" id="p1">1 · Your files</span>
+      <span class="fp-step" id="p2">2 · Your earnings</span>
+      <span class="fp-step" id="p3">3 · Start</span>
+    </div>
+
+    <!-- STEP 1 — FORM -->
+    <div class="fstep" id="step1">
+      <div class="grid2">
+        <div class="col-text">
+          <span class="eyebrow">Get started — free</span>
+          <h1 style="font-size:clamp(34px,5vw,58px)">Set your price and start earning today</h1>
+          <p class="lead mt-s">Tell us what you sell and your price range — we'll show you what you could earn. Sell to your own clients or get discovered by new buyers on the Dropbox marketplace.</p>
+          <ul class="reassure mt-l">
+            <li><span class="ck">✓</span> Get discovered by buyers browsing the marketplace</li>
+            <li><span class="ck">✓</span> Works with the Dropbox account you already have</li>
+            <li><span class="ck">✓</span> Get paid before you deliver the files</li>
+            <li><span class="ck">✓</span> Flat 10% per sale — no setup cost, nothing hidden</li>
+          </ul>
+        </div>
+        <div class="col-media">
+          <div class="form-card">
+            <h3 style="font-size:22px;margin-bottom:6px">Create your first paid link</h3>
+            <p style="color:var(--gray);font-size:14px;margin-bottom:22px">Takes under a minute. We'll project your earnings on the next step.</p>
+            <form id="funnelForm">
+              <div class="field">
+                <label for="email">Work email</label>
+                <input id="email" type="email" placeholder="you@studio.com" required>
+              </div>
+              <div class="field">
+                <label for="category">What kind of files do you sell?</label>
+                <select id="category" class="sel" required>
+                  <option value="" disabled selected>Choose a category…</option>
+                  <option value="photography">Photography &amp; video</option>
+                  <option value="design">Design &amp; templates</option>
+                  <option value="music">Music &amp; audio</option>
+                  <option value="consulting">Consulting &amp; research</option>
+                  <option value="architecture">Architecture &amp; CAD</option>
+                  <option value="education">Education &amp; courses</option>
+                  <option value="other">Something else</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="range">Type a price range for your files</label>
+                <select id="range" class="sel" required>
+                  <option value="" disabled selected>Choose a price range…</option>
+                  <option value="15">$5 – $25</option>
+                  <option value="38">$25 – $50</option>
+                  <option value="75">$50 – $100</option>
+                  <option value="175">$100 – $250</option>
+                  <option value="350">$250+</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Start earning</button>
+            </form>
+            <p style="color:var(--gray);font-size:12px;margin-top:16px;text-align:center">Demo funnel — no data is stored.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- trust strip (first screen only) -->
+      <div class="trust" style="margin-top:60px">
+        <div class="wrap">
+          <div class="stat"><span>700M+</span> registered users</div>
+          <span class="dot">•</span>
+          <div class="stat"><span>10%</span> flat per sale, nothing else</div>
+          <span class="dot">•</span>
+          <div class="stat"><span>0</span> setup cost</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- STEP 2 — EARNINGS INFOGRAPHIC -->
+    <div class="fstep" id="step2" hidden>
+      <div class="earn-head">
+        <span class="eyebrow">Your earnings potential</span>
+        <h1 style="font-size:clamp(26px,4.6vw,50px);white-space:nowrap">Here's what you will earn</h1>
+        <p class="lead" style="margin:14px auto 0" id="earnSubhead">Based on your category and price range.</p>
+      </div>
+
+      <div class="earn-stats">
+        <div class="earn-stat"><div class="k" id="statPer">$0</div><div class="l">Net per sale (after 10%)</div></div>
+        <div class="earn-stat"><div class="k" id="statMonth">$0</div><div class="l">Est. monthly earnings</div></div>
+        <div class="earn-stat"><div class="k" id="statYear">$0</div><div class="l">Projected first year</div></div>
+      </div>
+
+      <div class="chart-card">
+        <h3>Projected monthly earnings</h3>
+        <p class="sub">As your store gains traction over your first 12 months</p>
+        <div class="chart" id="chart">
+          <svg viewBox="0 0 720 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Projected monthly earnings chart">
+            <defs>
+              <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0061FF" stop-opacity="0.28"/>
+                <stop offset="100%" stop-color="#0061FF" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <g id="gridlines"></g>
+            <path class="area" id="areaPath" fill="url(#grad)"></path>
+            <path class="line" id="linePath"></path>
+            <g id="dots"></g>
+            <g id="xlabels"></g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="center" style="margin-top:32px">
+        <a href="../index.html" class="btn btn-primary btn-lg" id="toStep3">Start Earning</a>
+        <div style="margin-top:14px"><a href="#" id="backToStep1" style="color:var(--gray);font-weight:600;font-size:14px">← Edit my details</a></div>
+        <p class="hero-note" style="max-width:560px;margin:18px auto 0">Projection is illustrative, based on typical early-seller activity for your category. Your results will vary.</p>
+      </div>
+    </div>
+
+    <!-- STEP 3 — SUCCESS -->
+    <div class="fstep" id="step3" hidden>
+      <div class="form-card" style="max-width:620px;margin:0 auto;text-align:center">
+        <div style="font-size:46px">🎉</div>
+        <h1 style="font-size:clamp(28px,4vw,42px);margin-top:8px;text-align:center">You're in!</h1>
+        <p class="lead" style="margin:14px auto 0" id="successText">We sent a setup link to your inbox. Set your price and start earning.</p>
+        <a href="../index.html" class="btn btn-primary btn-lg" style="margin-top:26px">Go to my Dropbox</a>
+        <p style="color:var(--gray);font-size:12px;margin-top:16px">Demo confirmation — no account was created.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CONSOLIDATED INFO BLOCKS (visible on first screen, scroll down) ============ -->
+<div id="infoBlocks">
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="wrap">
+      <div class="center" style="max-width:720px;margin:0 auto">
+        <span class="eyebrow">How it works</span>
+        <h2 style="font-size:clamp(30px,4.6vw,52px)">Three steps from file to paid</h2>
+        <p class="lead" style="margin:16px auto 0">No setup, no new account. Sell to a client with a link — or list on the marketplace and let new buyers find you.</p>
+      </div>
+      <div class="steps mt-l">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Set a price</h3>
+          <p>Open any folder or file and choose what it's worth — a single shoot, a template, a beat pack. You're in control.</p>
+          <div class="media-frame mt-m" style="aspect-ratio:1/1">
+            <div class="ph">Step 1 video<small>assets/step1.mp4</small></div>
+            <video autoplay muted loop playsinline>
+              <source src="assets/step1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Share one link</h3>
+          <p>Send the Share &amp; Earn link to your client. They see a quick preview of what they're buying.</p>
+          <div class="media-frame mt-m" style="aspect-ratio:1/1">
+            <div class="ph">Step 2 video<small>assets/step2.mp4</small></div>
+            <video autoplay muted loop playsinline>
+              <source src="assets/step2.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Get paid</h3>
+          <p>They pay right there to unlock the full-quality files — before the work leaves your hands.</p>
+          <div class="media-frame mt-m" style="aspect-ratio:1/1">
+            <div class="ph">Step 3 video<small>assets/step3.mp4</small></div>
+            <video autoplay muted loop playsinline>
+              <source src="assets/step3.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET PAID BEFORE YOU DELIVER -->
+  <section class="section-cream">
+    <div class="wrap grid2">
+      <div class="col-text">
+        <span class="eyebrow">Why it's safer</span>
+        <h2 style="font-size:clamp(28px,4vw,44px)">Get paid <em>before</em> you deliver</h2>
+        <p class="lead mt-s">No more finishing a job and waiting weeks for a transfer. The buyer unlocks the final files only after payment clears — so you're never chasing money again.</p>
+      </div>
+      <div class="col-media">
+        <ul class="reassure-lg">
+          <li><span class="ck">✓</span> Previews show value without giving the work away</li>
+          <li><span class="ck">✓</span> Full files unlock automatically on payment</li>
+          <li><span class="ck">✓</span> Secure, trusted checkout powered by Dropbox</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section id="who">
+    <div class="wrap">
+      <div class="center" style="max-width:760px;margin:0 auto">
+        <span class="eyebrow">Who it's for</span>
+        <h2 style="font-size:clamp(30px,4.6vw,52px)">Made for people who sell ready-made digital files</h2>
+        <p class="lead" style="margin:16px auto 0">Create a digital product once and sell it to many. List it on the Dropbox marketplace, get discovered by new buyers, and turn your files into income.</p>
+      </div>
+      <div class="personas mt-l">
+        <div class="persona"><div class="emoji">📸</div><h3>Photographers &amp; filmmakers</h3><p>Sell presets, LUTs, and stock photo &amp; video packs to buyers everywhere.</p></div>
+        <div class="persona"><div class="emoji">🎨</div><h3>Designers &amp; creatives</h3><p>Sell templates, mockups, fonts, and UI kits — ready to download instantly.</p></div>
+        <div class="persona"><div class="emoji">🎧</div><h3>Musicians &amp; producers</h3><p>Sell beat packs, sample libraries, and presets to thousands of artists.</p></div>
+        <div class="persona"><div class="emoji">📊</div><h3>Researchers &amp; analysts</h3><p>Sell market research, reports, and datasets as ready-to-use files.</p></div>
+        <div class="persona"><div class="emoji">📐</div><h3>Architects &amp; 3D artists</h3><p>Sell CAD blocks, 3D models, and asset libraries straight off the shelf.</p></div>
+        <div class="persona"><div class="emoji">📚</div><h3>Educators &amp; creators</h3><p>Sell study notes, ebooks, courses, and templates to your whole audience.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="section-cream">
+    <div class="wrap price-hero">
+      <span class="eyebrow">Simple, transparent pricing</span>
+      <div class="price-big">10%</div>
+      <h2 style="font-size:clamp(26px,3.6vw,40px);margin:14px auto 0;max-width:18ch">flat per sale — delivery, checkout &amp; processing included</h2>
+      <p class="lead" style="margin:18px auto 0">No monthly fee. No setup cost. Everything's in one flat rate. You only pay when you get paid.</p>
+    </div>
+    <div class="wrap" style="margin-top:48px">
+      <table class="compare">
+        <thead>
+          <tr><th>Platform</th><th>Take rate</th><th>Delivers your files?</th><th>Extra setup?</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="you">Dropbox Share &amp; Earn</td><td class="you">10% flat (all-in)</td><td class="you">Yes — built in</td><td class="you">None</td></tr>
+          <tr><td>Gumroad (direct)</td><td>~10% all-in</td><td>Separate upload</td><td>New account</td></tr>
+          <tr><td>Stripe / PayPal</td><td>~3% processing</td><td>No</td><td>Setup &amp; invoicing</td></tr>
+          <tr><td>Creative Market</td><td>30–50%</td><td>Separate upload</td><td>New account</td></tr>
+        </tbody>
+      </table>
+      <p class="hero-note">Illustrative comparison for a case study. Competitor rates are approximate and may change.</p>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="section-blue">
+    <div class="wrap cta-band">
+      <h2>Sell your files, reach new buyers, keep more of what you earn</h2>
+      <a href="#top" class="btn btn-white btn-lg">Start earning</a>
+    </div>
+  </section>
+
+</div>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-top">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 43 40" aria-hidden="true"><path fill="#fff" d="M12.5 0L0 8.1l8.7 7 12.8-7.9zM0 22.1l12.5 8.1 8.7-7.2-12.8-7.9zm21.3.9l8.7 7.2L43 22.1l-8.6-7zM43 8.1L30.5 0 21.8 7.2l12.8 7.9zM21.5 24.6l-8.7 7.2-3.7-2.4v2.7l12.4 7.4 12.4-7.4v-2.7l-3.7 2.4z"/></svg>
+        Dropbox
+      </a>
+      <nav class="ft-links">
+        <a href="#how">How it works</a>
+        <a href="#who">Who it's for</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#top">Start earning</a>
+      </nav>
+    </div>
+    <p class="ft-note">Concept funnel created for a marketing case study. Not an official Dropbox product page. Earnings projections are illustrative.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var COMMISSION = 0.10; // 10% flat
+  var CATS = {
+    photography:{label:'Photography & video', sales:12},
+    design:{label:'Design & templates', sales:20},
+    music:{label:'Music & audio', sales:15},
+    consulting:{label:'Consulting & research', sales:6},
+    architecture:{label:'Architecture & CAD', sales:8},
+    education:{label:'Education & courses', sales:18},
+    other:{label:'Digital files', sales:10}
+  };
+  var RANGE_LABEL = {15:'$5–$25',38:'$25–$50',75:'$50–$100',175:'$100–$250',350:'$250+'};
+
+  var form=document.getElementById('funnelForm');
+  var step1=document.getElementById('step1'), step2=document.getElementById('step2'), step3=document.getElementById('step3');
+  var p1=document.getElementById('p1'), p2=document.getElementById('p2'), p3=document.getElementById('p3');
+  var infoBlocks=document.getElementById('infoBlocks');
+
+  function show(step){
+    [step1,step2,step3].forEach(function(s){s.hidden=true;});
+    step.hidden=false;
+    // the marketing/info blocks belong to the first screen only
+    if(infoBlocks){ infoBlocks.style.display = (step===step1) ? '' : 'none'; }
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function setProgress(n){
+    [p1,p2,p3].forEach(function(p,i){
+      p.classList.remove('active','done');
+      if(i<n-1)p.classList.add('done'); else if(i===n-1)p.classList.add('active');
+    });
+  }
+
+  // animate a number count-up
+  function countUp(el,end){
+    var start=0,dur=900,t0=null;
+    function tick(ts){
+      if(!t0)t0=ts; var k=Math.min((ts-t0)/dur,1);
+      var v=Math.round(start+(end-start)*(1-Math.pow(1-k,3)));
+      el.textContent='$'+v.toLocaleString('en-US');
+      if(k<1)requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // build the 12-month projection (ramp from 40% to 100% of mature run-rate)
+  function projection(mid,sales){
+    var perSale=mid*(1-COMMISSION);
+    var months=[],i;
+    for(i=1;i<=12;i++){
+      var ramp=0.4+0.6*(i/12);
+      months.push(Math.round(perSale*sales*ramp));
+    }
+    var year=months.reduce(function(a,b){return a+b;},0);
+    var mature=Math.round(perSale*sales);
+    return {perSale:Math.round(perSale), mature:mature, year:year, months:months};
+  }
+
+  function drawChart(vals){
+    var W=720,H=300,padL=58,padR=30,padT=28,padB=42;
+    var max=Math.max.apply(null,vals)*1.12||1;
+    var x=function(i){return padL+(W-padL-padR)*(i/(vals.length-1));};
+    var y=function(v){return H-padB-(H-padT-padB)*(v/max);};
+
+    // gridlines + y reference (4 lines)
+    var g='';
+    for(var r=0;r<=3;r++){
+      var gy=padT+(H-padT-padB)*(r/3);
+      g+='<line class="grid" x1="'+padL+'" y1="'+gy+'" x2="'+(W-padR)+'" y2="'+gy+'"/>';
+    }
+    document.getElementById('gridlines').innerHTML=g;
+
+    var line='M'+vals.map(function(v,i){return x(i)+' '+y(v);}).join(' L');
+    document.getElementById('linePath').setAttribute('d',line);
+    var area=line+' L'+x(vals.length-1)+' '+(H-padB)+' L'+x(0)+' '+(H-padB)+' Z';
+    document.getElementById('areaPath').setAttribute('d',area);
+
+    // dots
+    var d='';for(var i=0;i<vals.length;i++){d+='<circle class="dot" r="4" cx="'+x(i)+'" cy="'+y(vals[i])+'"/>';}
+    document.getElementById('dots').innerHTML=d;
+
+    // x labels (every 3rd month)
+    var xl='';for(var j=0;j<vals.length;j++){ if(j%3===0||j===vals.length-1){ xl+='<text class="xlab" text-anchor="middle" x="'+x(j)+'" y="'+(H-16)+'">M'+(j+1)+'</text>'; } }
+    document.getElementById('xlabels').innerHTML=xl;
+
+    // animate line draw
+    var lp=document.getElementById('linePath');
+    var len=lp.getTotalLength();
+    lp.style.transition='none';
+    lp.style.strokeDasharray=len; lp.style.strokeDashoffset=len;
+    // force reflow
+    lp.getBoundingClientRect();
+    lp.style.transition='stroke-dashoffset 1.1s ease .15s';
+    lp.style.strokeDashoffset=0;
+    var chart=document.getElementById('chart');
+    chart.classList.remove('animate'); void chart.offsetWidth; chart.classList.add('animate');
+  }
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var cat=document.getElementById('category').value;
+    var mid=parseFloat(document.getElementById('range').value);
+    if(!cat||!mid){return;}
+    var c=CATS[cat]||CATS.other;
+    var pr=projection(mid,c.sales);
+
+    document.getElementById('earnSubhead').textContent=
+      'Selling '+c.label.toLowerCase()+' in the '+(RANGE_LABEL[mid]||'')+' range, at a flat 10% fee.';
+    countUp(document.getElementById('statPer'),pr.perSale);
+    countUp(document.getElementById('statMonth'),pr.mature);
+    countUp(document.getElementById('statYear'),pr.year);
+
+    setProgress(2); show(step2);
+    // draw after the step is visible so the path has measurable length
+    requestAnimationFrame(function(){ drawChart(pr.months); });
+  });
+
+  document.getElementById('backToStep1').addEventListener('click',function(e){
+    e.preventDefault(); setProgress(1); show(step1);
+  });
+
+  // mobile nav
+  var toggle=document.querySelector('.nav-toggle'),links=document.querySelector('.nav-links');
+  if(toggle&&links){toggle.addEventListener('click',function(){links.classList.toggle('open');});}
+})();
+</script>
+</body>
+</html>
