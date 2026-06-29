@@ -94,8 +94,8 @@ export default function ShareEarnModal({ file, onClose, mode = 'earn' }) {
 
         {!shop && !priceError && (
           <p className="se-earn">
-            You will earn: <strong>${(Number(amount) * 0.95).toFixed(2)}</strong>
-            <span className="se-earn-note"> (price − 5% fee)</span>
+            You will earn: <strong>${(Number(amount) * 0.90).toFixed(2)}</strong>
+            <span className="se-earn-note"> (price − 10% fee)</span>
           </p>
         )}
 
